@@ -1,0 +1,31 @@
+
+
+.title {
+  @apply sm:text-6xl text-3.5xl mt-3.5 sm:mt-10;
+  color: var(--primary-blue-500, #181EA9);
+  font-family: Kanit;
+  font-style: normal;
+  font-weight: 400;;
+  /* 63px */  
+}
+
+.description {
+  @apply sm:text-xl text-lg;
+  color: var(--neutrals-gray-400, #1D222D);
+  font-family: Kanit;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+.textContainer {
+  @apply xl:col-span-6 col-span-11 ml-6 sm:ml-0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.bulletContainer { 
+  @apply col-span-1 ;
+}

@@ -17,5 +17,12 @@
   "readMore" : "Read more", 
   "runCardTitle" : "Run",
   "runCardDescription" : "your JupyterLab Python Notebooks <breakLine/> on more powerful hardware with help <breakLine/> of <strong>Jupyter on Golem </strong>",
-  "getGLM" : "Get GLM"
+  "getGLM" : "Get GLM ",     
+  "WhatYouNeedTitle" : "What do you need to start?", 
+  "setupCryptoTitle" : "Set up your crypto wallet", 
+  "setupCryptoDescription" : "We suggest using reliable options like MetaMask or TrustWallet to securely store your tokens", 
+  "getTokensTitle" : "Get Tokens", 
+  "getTokensDescription" : "You can buy GLM tokens on exchanges like Uniswap, Binance, or KuCoin",
+  "topUpTitle" : "Top up the internal Yagna wallet and start using computing power",
+  "topUpDescription" : "Yagna wallet allows requestors to pay for services within the Golem ecosystem and enables providers to receive payments"
 }

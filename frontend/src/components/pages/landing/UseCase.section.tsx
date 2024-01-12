@@ -3,6 +3,7 @@ import sectionStyle from './UseCase.section.module.css'
 import landingStyle from './LandingPage.module.css'
 import { Card } from './Card'
 import { CardData } from './types'
+import { AnimatedSection } from './AnimatedSection'
 
 const useCases: CardData[] = [
   {
@@ -26,21 +27,23 @@ const useCases: CardData[] = [
 ]
 export const UseCaseSection = () => {
   return (
-    <div className={sectionStyle.container}>
-      <div className={sectionStyle.bulletContainer}>
-        <Bullet />
-      </div>
-      <div className={sectionStyle.titleContainer}>
-        <div className={`${landingStyle.title} ml-4 sm:ml-0 text-left`}>
-          <Trans i18nKey="useCasesTitle" ns="landing" />
+    <AnimatedSection>
+      <div className={sectionStyle.container}>
+        <div className={sectionStyle.bulletContainer}>
+          <Bullet />
         </div>
+        <div className={sectionStyle.titleContainer}>
+          <div className={`${landingStyle.title} ml-4 sm:ml-0 text-left`}>
+            <Trans i18nKey="useCasesTitle" ns="landing" />
+          </div>
+        </div>
+        <div className={sectionStyle.separator} />
+        {useCases
+          .map((x) => {
+            return { ...x, className: sectionStyle.card }
+          })
+          .map(Card)}
       </div>
-      <div className={sectionStyle.separator} />
-      {useCases
-        .map((x) => {
-          return { ...x, className: sectionStyle.card }
-        })
-        .map(Card)}
-    </div>
+    </AnimatedSection>
   )
 }

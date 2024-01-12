@@ -1,6 +1,7 @@
 import sectionStyle from './Run.section.module.css'
 import { Card } from './Card'
 import { CardData } from './types'
+import { AnimatedSection } from './AnimatedSection'
 export const CommandLine = (command: string, idx: number) => {
   //Match <color='red'> </color> tags
   console.log(command)
@@ -122,30 +123,34 @@ const Progress = [
 ]
 export const RunSection = () => {
   return (
-    <div className={sectionStyle.container}>
-      <Card
-        {...underlyingCardData}
-        className="col-span-12 mb-48 md:mb-1"
-        descriptionClassName={`${sectionStyle.description}`}
-        titleClassName={`${sectionStyle.title}`}
-        linkClassName="mb-8"
-      />
-      <div className={`${sectionStyle.overlayContainer} ${sectionStyle.card}`}>
-        <CommandBox command="%connect mem>8 disk >20 cores>4" />
-        {Progress.map((x) => x())}
-        <div className="mt-2" />
-        <CommandBox command="%pip install colorama" />
-        <div className="mt-2" />
-        <CommandBox
-          command={
-            "from colsorama <color='#5BC281'>import </color>Fore \n print(Fore.BLUE + <color='#F472B6'>‘Jupyter on Golem is great!’</color>)"
-          }
+    <AnimatedSection>
+      <div className={sectionStyle.container}>
+        <Card
+          {...underlyingCardData}
+          className="col-span-12 mb-48 md:mb-1"
+          descriptionClassName={`${sectionStyle.description}`}
+          titleClassName={`${sectionStyle.title}`}
+          linkClassName="mb-8"
         />
+        <div
+          className={`${sectionStyle.overlayContainer} ${sectionStyle.card}`}
+        >
+          <CommandBox command="%connect mem>8 disk >20 cores>4" />
+          {Progress.map((x) => x())}
+          <div className="mt-2" />
+          <CommandBox command="%pip install colorama" />
+          <div className="mt-2" />
+          <CommandBox
+            command={
+              "from colsorama <color='#5BC281'>import </color>Fore \n print(Fore.BLUE + <color='#F472B6'>‘Jupyter on Golem is great!’</color>)"
+            }
+          />
 
-        <div className={sectionStyle.greatJupyter}>
-          Jupyter on Golem is great!
+          <div className={sectionStyle.greatJupyter}>
+            Jupyter on Golem is great!
+          </div>
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   )
 }
